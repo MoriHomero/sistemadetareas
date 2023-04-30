@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>Perfil</h1>
+
+<br>
+<br>
+
+<h3>Tareas</h3>
+
+    <ul>
+        {% for task in tasks %}
+            <li> 
+                <a href="{% url 'task_detail' task.id %}">
+                    <h1> {{task.user.username}} </h1>
+                    <p> {{task.titulo}} <p>
+                    <p> {{task.descripcion}} <p>                    
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
